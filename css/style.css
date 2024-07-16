@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: red;
+}
+.banner {
+    width : 800px ;
+    height : 300px ;
+    overflow: hidden;
+    position: relative;
+}
+.banner-content {
+    display: flex;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-next , .btn-prev {
+    width : 35px ;
+    height : 35px ;
+    border-radius: 50%;
+    top : 50% ;
+    transform: translateY(-50%);
+}
+.btn-next:hover , .btn-prev:hover {
+    background-color: red;
+}
+#btn-open-login , #btn-open-logout{
+    cursor: pointer;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none;
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+.overlay-login {
+    width : 300px ;
+    height : 300px ;
+    padding: 10px;
+    position: relative;
+    border-radius: 10px;
+    top : 50% ;
+    left : 50% ;
+    transform: translate(-50% , -50%);
+}
+
+.close-login {
+    position: absolute;
+    top : 10px ;
+    right : 10px ;
+    padding: 10px;
+}
+
+
+/* 
+Phần main */
+
+
+@media (min-width : 992px) {
+    main {
+        display: grid;
+        grid-template-columns: 3.5fr 1fr;
+        gap : 20px ;
+        margin-top: 10px;
+    }
+    #btn-open-login {
+        display: none;
+    }
+    
+}
+
+
+@media (width < 992px) {
+    /* .main-form-login {
+        display: block;
+    } */
+    #carouselExampleCaptions {
+        margin-top: 10px;
+    }
+
+
+
+}
+@media (width < 768px) {
+    .footer-form {
+        width  :100% ;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Phần main-login-category */
+
+.main-form-login , .main-category {
+    border: 1px dotted gray;
+    padding: 10px;
+}
+.main-form-login {
+    position: relative;
+    overflow: hidden;
+}
+
+#right-left {
+    display: flex;
+    justify-content: space-between;
+}
+#right-left a {
+    cursor: pointer;
+}
+.form-signup {
+    position: absolute;
+    background-color: #fff;
+    opacity: 1;
+    top : 0 ;
+    right : 0 ;
+    padding: 10px;
+    width : 100% ;
+    transform: translateX(100%);
+    transition: 0.3s ease-in-out;
+}
+.form-forgot {
+    padding: 10px;
+    position: absolute;
+    opacity: 1;
+    background-color: #fff;
+    top : 0 ;
+    left : 0 ;
+    width : 100% ;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in-out;
+}
+
+.main-category {
+    margin-top: 20px;
+}
+.main-category ul {
+    list-style: none;
+    padding: 0;
+}
+.main-category ul li {
+    border-bottom:1px dotted gray;
+}
+.main-category ul a {
+    padding: 7px 0;
+    border-bottom:1px dotted gray;
+}
+.main-category ul a:hover {
+    background-color: rgb(207, 207, 207);
+}
+
+/* Phần avatar */
+.main-profile {
+    width : 100% ;
+    border: 1px dotted gray;
+    padding: 10px;
+}
+.avatar {
+    width : 150px ;
+    height : 150px ;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.avatar img {
+    border-radius: 50%;
+}
+
+/* Top 10 */
+.list-views-product , .list-posts{
+    border: 1px dotted gray;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+.list-views-product ul , .list-posts ul{
+    list-style: none;
+    padding: 0;
+}
+.list-views-product ul li , .list-posts ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted gray;
+}
+.list-views-product ul li a , .list-posts ul li a{
+    text-decoration: none;
+    color : black ;
+    font-size: 14px;
+    font-weight: 600;
+}
+.list-posts ul li a {
+    margin-left: 5px;
+}
+/* Form đổi mật khẩu  */
+/* .box-change-pass {
+    border: 1px solid gray;
+} */
+/* Nút mua hàng */
+.cart {
+    position: relative;
+}
+.btn-buy {
+    background-color: red;
+    color : white ;
+}
+
+/* Đưa tên hoặc mô tả về dấu 3 chấm nếu dài quá ; */
+.card-text , .card-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Nút thêm vào giỏ hàng ; */
+.btn-cart {
+    margin-top: 3px;
+    font-size: 15px;
+    padding:7px 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    margin-left: 30px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+.card-name {
+    padding: 10px 15px;
+}
+.card-body {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    transform: translateY(100%);
+    transition: all .3s;
+}
+.card:hover .card-body {
+    transform: translateY(0);
+}
+
+/* Trang quản trị của admin ; */
+.table {
+    margin-top: 7px;
+}
+.table thead tr th a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Trang admin */
+.sectors {
+    border: 1px solid gray;
+}
+.products {
+    border: 1px solid gray;
+}
+
+
+/* Phần footer  */
+
+
+footer {
+    width : 100% ;
+    margin-top: 20px;
+    background : rgb(8, 8, 65);
+}
+.footer-form {
+    width  :100% ;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+}
+.footer-form form label {
+    color: #fff;
+    font-size: 18px;
+}
+.footer-form form div {
+    width : 300px ;
+    height : 35px ;
+    border : 1px solid #fff ;
+    margin-top: 5px;
+    position: relative;
+}
+.footer-form form div input {
+    position: absolute;
+    outline: none;
+    top : 0 ;
+    left : 0 ;
+    width : 70% ;
+    height : 100% ;
+    background: transparent;
+    border : none ;
+    padding-left: 5px;
+    caret-color: #fff;
+}
+.footer-form form div input::placeholder {
+    color: #fff;
+}
+.footer-form form div button {
+    position: absolute;
+    border: none;
+    width : 30% ;
+    height : 100% ;
+    background: red;
+    top : 0 ;
+    right : 0 ;
+    color: #fff;
+}
+.footer hr {
+    border: 1px solid gray;
+    margin-top: 20px;
+}
+.nav-footer {
+    color: #fff;
+    padding: 0 20px;
+}
+
+.nav-footer div nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-footer div nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-footer div nav ul li {
+    margin-top: 10px;
+}
+
+#vmart {
+    color: #fff;
+    font-size: 18px;
+    height : 50px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nút cuộn về đầu trang */
+
+#scroll-top {
+    padding: 7px 10px;
+    background-color: red;
+    color : #fff ;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right : 20px ;
+    display: none;
+}
